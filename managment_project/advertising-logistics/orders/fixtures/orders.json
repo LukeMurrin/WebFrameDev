@@ -1,0 +1,20 @@
+[
+    {
+        "model": "orders.order",
+        "pk": 1,
+        "fields": {
+            "user": 2,
+            "parcel": 1,
+            "order_date": "2025-04-24T10:00:00Z"
+        }
+    },
+    {
+        "model": "orders.order",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "parcel": 2,
+            "order_date": "2025-04-24T12:00:00Z"
+        }
+    }
+]

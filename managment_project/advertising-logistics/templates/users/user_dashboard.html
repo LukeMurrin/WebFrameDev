@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Your Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'parcel_list' %}">View Parcels</a></li>
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Your Parcels</h2>
+            <ul>
+                {% for parcel in parcels %}
+                    <li>
+                        <strong>Parcel ID:</strong> {{ parcel.id }}<br>
+                        <strong>Contents:</strong> {{ parcel.contents }}<br>
+                        <strong>Status:</strong> {{ parcel.status }}<br>
+                    </li>
+                {% empty %}
+                    <li>No parcels found.</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; {{ current_year }} Advertising Logistics. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Ads{% endblock %}
+
+{% block content %}
+<h1>Advertisements</h1>
+<ul>
+    {% for ad in ads %}
+        <li>
+            <strong>{{ ad.title }}</strong><br>
+            {{ ad.content }}<br>
+            Revenue: ${{ ad.revenue }}
+        </li>
+    {% empty %}
+        <li>No ads available.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
